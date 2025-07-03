@@ -8,7 +8,7 @@ export default async function handler(req: Request, res: Response) {
   const file = body.file; // use next-connect or multerpart
 
   const roomId = Number(body.roomId);
-  const key = `listing/:${date.now)}_${file.originalName}`;
+  const key = `listing/${Date.now()}_${file.originalName}`;
 
   await R2.put(key, file.buffer);
 
