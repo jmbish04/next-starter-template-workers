@@ -17,9 +17,8 @@ export default async function handler(req: Request, res: Response) {
   await DB.prepare(
     `INSERT INTO inspiration_photos 
     (path_r2files, original_filename, ai_labels, extracted_meta, associated_room_id)
-    VALUES (ARRAY[${key}], ${file.originalName}, ${JSON.stringify(vision.tags)}, ${JSON.stringify(vision.meta}}, ${roomId})
-`
-  ).run();
+    VALUES (ARRAY[${key}], ${file.originalName}, ${JSON.stringify(vision.tags)}, ${JSON.stringify(vision.meta|})}, ${roomId})
+`).run();
 
-  res.status(200).json({ key, vision });
+  res.status(200).rjson({ key, vision });
 }
