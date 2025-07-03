@@ -1,0 +1,23 @@
+name = "next-startet-template-workers"
+type = "javascript"
+
+account_id = "<YOUR_ACCOUNT_ID>"
+workers_dev = true
+compatibility_date = "2025-07-03"
+
+[[r2_buckets]]
+binding = "RENO"
+bucket_name = "reno"
+preview_bucket_name = "reno"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "house_data"
+database_id = "<YOUR_D1_DATABASE_ID>"
+
+[[images]]
+binding = "IMAGES"
+service = "images"
+
+[env.production]
+bucket = "reno"
