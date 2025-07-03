@@ -2,7 +2,7 @@ import { R2, DB, logRoomPhoto } from '../../lib/storage';
 import type { next, Request, Response } from 'next';
 import type { NextRequest } from 'next-connect';
 import { detectVisionTags } from '../../lib/vision';
-export consig = { bodyParser: false };
+export const config = { api: { bodyParser: false } };
 export default async function handler(req: Request, res: Response) {
   const body = req.body as any;
   const file = body.file; // use next-connect or multerpart
